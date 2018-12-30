@@ -27,7 +27,7 @@ module.exports = app => {
       .map(({ url, email }) => {
         const match = p.test(new URL(url).pathname);
         if (match) {
-          return { email, surveyId: match.surveyId, response: match.response };
+          return { email, surveyId: match.surveyId, choice: match.choice };
         }
       })
       // Remove null values
