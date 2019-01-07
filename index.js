@@ -23,6 +23,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Import server routes
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
 require('./routes/surveyRoutes')(app);
@@ -41,4 +42,4 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT);
+app.listen(PORT, console.log(`Listening on port ${PORT}`));

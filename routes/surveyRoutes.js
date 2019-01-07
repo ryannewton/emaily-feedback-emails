@@ -19,6 +19,29 @@ module.exports = app => {
     res.send('Thanks for voting');
   });
 
+  // Adds a response to a survey
+  app.post('/api/surveys/response', (req, res) => {
+    const { score, reason, surveyId } = req.body;
+
+    Survey.findByIdAndUpdate(
+      surveyId,
+      {
+        $push: {
+          responses: { score, reason },
+        },
+      },
+      {},
+      err => {
+        if (err) {
+          console.log('Something went wrong updating survey ', surveyId);
+          console.log('Error: ', err);
+        }
+      }
+    );
+
+    res.status(200).send();
+  });
+
   app.post('/api/surveys/webhooks', (req, res) => {
     const p = new Path('/api/surveys/:surveyId/:choice');
 
