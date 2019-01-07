@@ -5,12 +5,20 @@ module.exports = survey => {
     <html>
       <body>
         <div style="text-align: center;">
-          <h3>I'd like your input!</h3>
-          <p>Please answer the following question:</p>
-          <p>${survey.body}</p>
+          <h3>Your Opinion Counts.</h3>
+          <p>How likely is it that you would refer ${survey.body} to a friend or colleague?</p>
           <div>
-            <a href="${keys.redirectDomain}/api/surveys/${survey.id}/yes">Yes</a>
-            <a href="${keys.redirectDomain}/api/surveys/${survey.id}/no">No</a>
+            <a href="${keys.redirectDomain}/surveys/reason/${survey.id}/0">0</a>
+            <a href="${keys.redirectDomain}/surveys/reason/${survey.id}/1">1</a>
+            <a href="${keys.redirectDomain}/surveys/reason/${survey.id}/2">2</a>
+            <a href="${keys.redirectDomain}/surveys/reason/${survey.id}/3">3</a>
+            <a href="${keys.redirectDomain}/surveys/reason/${survey.id}/4">4</a>
+            <a href="${keys.redirectDomain}/surveys/reason/${survey.id}/5">5</a>
+            <a href="${keys.redirectDomain}/surveys/reason/${survey.id}/6">6</a>
+            <a href="${keys.redirectDomain}/surveys/reason/${survey.id}/7">7</a>
+            <a href="${keys.redirectDomain}/surveys/reason/${survey.id}/8">8</a>
+            <a href="${keys.redirectDomain}/surveys/reason/${survey.id}/9">9</a>
+            <a href="${keys.redirectDomain}/surveys/reason/${survey.id}/10">10</a>
           </div>
         </div>
       </body>
